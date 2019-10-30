@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>DBC IT Secret Santa</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <style>
 body,h1 {font-family: "Raleway", sans-serif}
@@ -21,12 +21,40 @@ body, html {height: 100%}
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     DB Cargo UK
   </div>
-  <div class="w3-display-middle">
+  <div class="w3-display-middle" id = "contentMain">
     <h1 class="w3-jumbo w3-animate-top">Secret Santa</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large w3-center">Type your email below and enter the Secret Santa</p>
+    <input id="email">
+    <button type="button" onclick="myFunction()">Submit</button>
   </div>
-  <div class="w3-display-bottomleft w3-padding-large">Website by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">Samuel Haque</a>
+
+  <div class="w3-display-middle w3-jumbo"><p id="demo"></p></div>
+  <div class="w3-display-bottommiddle"><p id="demo2"></p></div>
+  <script>
+  function myFunction() {
+    var x, text, text2, mainContent;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("email").value;
+    text2 = document.getElementById("demo2").value;
+    mainContent = document.getElementById("contentMain");
+    // If x is Not a Number or less than one or greater than 10
+    if (x.includes("@deutschebahn.com")) {
+      text = "Ho Ho Ho";
+      demo2.style.display = "none";
+      mainContent.style.display = "none";
+      document.getElementById("demo").innerHTML = text;
+    } 
+    else {
+      text = "Please enter a valid email";
+      document.getElementById("demo2").innerHTML = text;
+    }
+
+  }
+  </script>
+
+  <div class="w3-display-bottomleft w3-padding-large">Website by Samuel Haque</a>
   </div>
 </div>
 
