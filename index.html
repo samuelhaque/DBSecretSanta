@@ -16,7 +16,54 @@ body, html {height: 100%}
 }
 </style>
 <body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDL3ycrQth4jrH3r4karKr83pXybPD2gAQ",
+    authDomain: "dbsecretsanta-de4fa.firebaseapp.com",
+    databaseURL: "https://dbsecretsanta-de4fa.firebaseio.com",
+    projectId: "dbsecretsanta-de4fa",
+    storageBucket: "dbsecretsanta-de4fa.appspot.com",
+    messagingSenderId: "270072681262",
+    appId: "1:270072681262:web:9460543c457769d10260bf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+
+  function myFunction() {
+    var x, text, text2, mainContent;
+
+    // Get the value of the input field with id="numb"
+    x = document.getElementById("email").value;
+    text2 = document.getElementById("demo2").value;
+    mainContent = document.getElementById("contentMain");
+    // If x is Not a Number or less than one or greater than 10
+    if (x.includes("@deutschebahn.com")) {
+      text = "Ho Ho Ho";
+      firebase.database().ref("email").push({
+        email : x
+      })
+      demo2.style.display = "none";
+      mainContent.style.display = "none";
+      document.getElementById("demo").innerHTML = text;
+    } 
+    else {
+      text = "Please enter a valid email";
+      document.getElementById("demo2").innerHTML = text;
+    }
+
+  }
+
+
+
+</script>
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
   <div class="w3-display-topleft w3-padding-large w3-xlarge">
     DB Cargo UK
@@ -39,6 +86,6 @@ body, html {height: 100%}
   <div class="w3-display-bottomleft w3-padding-large">Website by Samuel Haque</a>
   </div>
 </div>
-<script src="script.js"></script>
+<!--<script src="script.js"></script>-->
 </body>
 </html>
