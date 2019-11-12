@@ -45,7 +45,7 @@ body, html {height: 100%}
     text2 = document.getElementById("demo2").value;
     mainContent = document.getElementById("contentMain");
     // If x is Not a Number or less than one or greater than 10
-    if (x.includes("@deutschebahn.com")) {
+    if (x.search("@deutschebahn.com")>-1) {
       text = "Ho Ho Ho";
       firebase.database().ref("email").push({
         email : x
